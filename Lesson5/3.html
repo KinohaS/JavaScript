@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Выполнить все задачи в теге script. Комментарии, в которых написаны задачи не
+стирать, код с решением задачи пишем под комментарием.
+-->
+
+<p class="super_element">Привет</p>
+
+<img src="https://placeimg.com/50/50/animals" alt="">
+<img src="https://placeimg.com/50/50/arch" alt="">
+<img src="https://placeimg.com/50/50/nature" alt="">
+<img src="https://placeimg.com/50/50/people" alt="">
+<img src="https://placeimg.com/50/50/tech" alt="">
+<img src="https://placeimg.com/50/50/tech/grayscale" alt="">
+<img src="https://placeimg.com/50/50/tech/sepia" alt="">
+
+<br>
+
+<button>Кнопка</button>
+<button class="super_element">Кнопка с классом btn</button>
+<button>Кнопка</button>
+
+<br>
+
+<textarea></textarea>
+
+<br>
+
+<ul>
+  <li>
+    <button>Кнопка 1</button>
+  </li>
+  <li>
+    <button>Кнопка 2</button>
+  </li>
+  <li>
+    <button>Кнопка 3</button>
+  </li>
+  <li>
+    <button>Кнопка 4</button>
+  </li>
+</ul>
+
+<script>
+  "use strict";
+
+  /*
+  1.
+  */
+
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => console.log("все теги прогрузились")
+  );
+
+  /*
+  2.
+  */
+
+  window.addEventListener('load', () => console.log("страница загрузилась"));
+
+  /*
+  3.
+  */
+
+  document.addEventListener('click', event => {
+    const containStr = event.target.classList.contains('super_element')
+      ? 'присутствует' : 'отсутствует';
+    console.log(`Класс "super_element" ${containStr} в элементе "${event.target.tagName.toLowerCase()}".`);
+  });
+
+  /*
+  4.
+   */
+
+  document
+    .querySelector('textarea')
+    .addEventListener('mouseover', () => console.log("Вы навели на textarea."));
+
+  /*
+  5.
+   */
+
+  document.querySelector('ul').addEventListener('click', event => {
+    if (event.target.tagName !== "BUTTON") {
+      return;
+    }
+    console.log(event.target.textContent);
+  });
+
+  /*
+  6.
+  */
+  /*
+  AFHSFHJSAfbhsjUOFofpavlxlkJGFpiausfglFBL64989gybiu4b5237E898bf9dF9asf9naS9Fa9nsf9763NRn296794N32r69bf9sdbfSDBF9Sd9fnS9DFB9n3429
+  */
+
+  /*
+  7.
+   */
+
+  document
+    .querySelectorAll('li:nth-child(2n)')
+    .forEach(el => el.style.backgroundColor = 'red');
+</script>
+</body>
+</html>
